@@ -1,0 +1,14 @@
+<div >
+  <input class="search" type="text" name="" value="" placeholder="Search Jobs by expirence or location or skill" #jobName>
+  <button type="button" name="button" (click) = "this.jobservice.getJobs(jobName.value)">
+    Search
+  </button>
+</div>
+
+
+<div class = "seejobs"> 
+  <h2> Number of jobs {{this.jobservice.getTotalJobs()}}</h2>
+<ul *ngIf = "this.jobservice.currentJob !== undefined">
+  <li *ngFor =" let p of this.jobservice.currentJob">{{p.name}}</li>
+</ul>
+</div>
